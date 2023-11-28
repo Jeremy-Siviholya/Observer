@@ -1,24 +1,28 @@
 let options = {
-  root: document.querySelector("#app"),
+  root: document.querySelector("body"),
   rootMargin: "0px",
   threshold: 1.0,
 };
-/**
- * 
- * @param {boolean} entries 
- * @param {object} observer 
- */
+
 
 let handleIntersect = (entries, observer) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting===true) {
-      //  entry.target.style.color="blue";
-        entry.target.style.translate = "-120px";
+    if (entry.isIntersecting) {
+      
+        entry.target.animate([
+          { transform: "translateX(-10px)", opacity: 0 },
+          { transform: "translateX(0)", opacity: 1 },
+        ]
+        ,
+        {
+
+          duration:300,
+        }
+        );
     }
-    else{
-       entry.target.style.translate = "120px";
-    }
-    console.log(observer);
+      
+    console.log(entry.target);
+    console.log(entry.isIntersecting);
   });
 };
 
