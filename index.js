@@ -1,34 +1,24 @@
-let options = {
-  root: document.querySelector("body"),
-  rootMargin: "0px",
-  threshold: 1.0,
-};
 
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: .1,
+};
 
 let handleIntersect = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      
-        entry.target.animate([
-          { transform: "translateX(-10px)", opacity: 0 },
-          { transform: "translateX(0)", opacity: 1 },
-        ]
-        ,
-        {
-
-          duration:300,
-        }
-        );
-    }
-      
-    console.log(entry.target);
-    console.log(entry.isIntersecting);
+      entry.target.classList.add("reveal-visible");
+       console.log(entry.isIntersecting);
+       observer.unobserve(entry.target);
+    } 
+    else{
+       entry.target.classList.remove("reveal-visible");
+    } 
   });
 };
 
 let observer = new IntersectionObserver(handleIntersect, options);
 
-let target = document.querySelector("#elem");
-observer.observe(target);
-
+let target = document.querySelectorAll("[class*='reveal-']").forEach(r=>observer.observe(r))
 
