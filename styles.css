@@ -38,9 +38,9 @@ h2{
   background: blueviolet;
   color: white;
   padding: .4em 1.3em;
-  border: 2px solid gray;
+  border: 1px solid gray;
   cursor: pointer;
-  border-radius: 7px;
+
   font-size: 20px;
 }
 
