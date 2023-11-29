@@ -17,16 +17,7 @@ body {
   padding: 20px 0;
 }
 
-.btn{
-  padding: .5em 1.2em;
-  background: rgb(0, 89, 255);
-  color: white;
-  font-size: 17px;
-  outline: none;
-  border: 1px solid rgb(55, 27, 255);
-  border-radius: 20px;
-  font: bold;
-}
+
 
 
 
@@ -34,6 +25,28 @@ img{
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+h2{
+  position: absolute;
+  top: 100px;
+}
+
+.h2{
+  position: absolute;
+  bottom: 100px;
+  background: blueviolet;
+  color: white;
+  padding: .4em 1.3em;
+  border: 2px solid gray;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+.h2:hover{
+  background: hotpink;
+  transition-duration: .5s;
 }
 
 
@@ -46,8 +59,14 @@ img{
 
 .app{
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  background: white;
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  position: relative;
 }
 
 .elem {
