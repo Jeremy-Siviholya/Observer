@@ -2,15 +2,15 @@
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: .1,
+  threshold: .9,
 };
 
 let handleIntersect = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("reveal-visible");
-       console.log(entry.isIntersecting);
-       observer.unobserve(entry.target);
+      //  console.log(entry.isIntersecting);
+      //  observer.unobserve(entry.target);
     } 
     else{
        entry.target.classList.remove("reveal-visible");
